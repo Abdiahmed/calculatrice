@@ -32,7 +32,7 @@ namespace Calculatrice
 
             //Saisie du choix de l'opérateur.
             Console.Write("Opération à choix [+ - * / ^] : ");
-           
+
             while (isOpIncorrect)
             {
                 string strOp = Console.ReadLine();
@@ -41,11 +41,12 @@ namespace Calculatrice
                 {
                     default:
                         Console.WriteLine("Opération non reconnue par le système !");
-                        Console.WriteLine("Veuillez saisir à nouveau l'opérateur [+ - * / ^] : ");
+                        Console.Write("Veuillez saisir à nouveau l'opérateur [+ - * / ^] : ");
                         isOpIncorrect = true;
                         break;
                     case "+":
-                        dblRep = 0;
+                        dblRep = Outils.Addition(dblVal1, dblVal2);
+                        Console.Write("La réponse : " + dblRep.ToString());
                         break;
                     case "-":
                         dblRep = 0;
@@ -59,9 +60,7 @@ namespace Calculatrice
                     case "^":
                         dblRep = 0;
                         break;
-                }
-
-                Console.WriteLine(dblVal1.ToString());
+                }              
 
                 Console.ReadKey();
             }
